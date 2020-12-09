@@ -22,7 +22,7 @@ client.on('message', message => {
 
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-
+    //HELP COMMAND
     else if(command === 'help'){
 
             const exampleEmbed = {
