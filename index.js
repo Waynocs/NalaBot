@@ -39,6 +39,10 @@ client.on('message', message => {
                 fields: [
                     {
                         name: `*${prefix}help*`,
+                        value: 'Donne toutes les commandes du bot',
+                    },
+                    {
+                        name: `*${prefix}pp*`,
                         value: 'Donne votre photo de profil discord actuelle',
                     },
                     {
