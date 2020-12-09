@@ -17,9 +17,55 @@ client.on('ready', async () =>{
 client.on('message', message => {
     const args = message.content.slice(prefix.length).trim().split(' ');
     const command = args.shift().toLowerCase();
+
     
 
     if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+
+    else if(command === 'help'){
+
+            const exampleEmbed = {
+                color: "FF00FB",
+                title: 'Help',
+                author: {
+                    name: 'SERANO Waïan',
+                    url: 'https://github.com/Waynocs',
+                },
+                description: 'Trouvez le code source du bot ici : [GitHub](https://github.com/Waynocs/NalaBot) \n Mon [Insta](https://www.instagram.com/waianserano/) :)',
+                thumbnail: {
+                    url: 'https://cdn.discordapp.com/avatars/310347657425977345/a_f80d256f7f5578336f5528d559f207e2.gif',
+                },
+                fields: [
+                    {
+                        name: `*${prefix}help*`,
+                        value: 'Donne votre photo de profil discord actuelle',
+                    },
+                    {
+                        name: `*${prefix}kick*`,
+                        value: 'Fais genre que vous ejectez quelqu\'un',
+
+                    },
+                    {
+                        name: `*${prefix}server*`,
+                        value: 'Donne le nom du serveur dans lequel la commande est effectué',
+
+                    },
+                    {
+                        name: `*${prefix}user-info*`,
+                        value: 'Permet d\'afficher les infos de l\'utilisateur',
+
+                    },
+
+                    {
+                        name: `*${prefix}clear*`,
+                        value: 'Permet de supprimer les messages d\'un channel (de 1 à 99)',
+                    },
+                ],
+
+            };
+            message.channel.send({ embed: exampleEmbed });
+    }
 
     //commande pour kick un utilisateur
     else if (command === 'kick') {
