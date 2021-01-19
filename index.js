@@ -52,7 +52,7 @@ client.on('message', message => {
                     },
                     {
                         name: `*${prefix}server*`,
-                        value: 'Donne le nom du serveur dans lequel la commande est effectué',
+                        value: 'Donne le nom du serveur dans lequel la commande est effectuée',
 
                     },
                     {
@@ -101,13 +101,11 @@ client.on('message', message => {
     //Clear messages
     else if(message.content.startsWith(`${prefix}clear`)){
        
-        if(message.member.hasPermission('MANAGE_MESSAGES')){
-           
+        if (message.member.hasPermission('MANAGE_MESSAGES')) {
             let args = message.content.trim().split(/ +/g);
-
-            if(args[1]){
+            if (args[1]) {
                 //NaN = Not a Number
-                if(!isNaN(args[1]) && args[1] >= 1 && args[1] <= 99 ){
+                if (!isNaN(args[1]) && args[1] >= 1 && args[1] <= 99) {
                     message.delete();
                     message.channel.bulkDelete(args[1]);
                     message.channel.send(`Vous avez supprimé ${args[1]} message(s)`)
@@ -123,8 +121,5 @@ client.on('message', message => {
         }
     }
 });
-
-
-
 
 client.login(BOT_TOKEN);
